@@ -1,0 +1,9 @@
+body {
+  background-color: #a4c4f4;
+}
+.phone{
+  max-height: 73%;
+  max-width: 73%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
