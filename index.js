@@ -1,12 +1,24 @@
 $(document).mousemove(function(mouse){
-    var leftPostition = mouse.pageX
-    var rightPostition = mouse.pageY
-    console.log(leftPostition)
-    $("#phone").css({left:leftPostition , top:rightPostition});
-    // $('#phone').animate({'marginLeft' : 50%});
-    // $( "#phone" ).position({
-    //   my: "left+0 bottom+0",
-    //   of: mouse,
-    //   collision: "fit"
-    // });
+
+    var xPostition = mouse.pageX
+    var yPostition = mouse.pageY
+
+    $("#phone").css({left:xPostition , top:yPostition});
+
+    phoneWidth = document.getElementById('phone').width
+    phoneHeight = document.getElementById('phone').height
+    backgroundHeight = document.getElementById('colour-background').height
+    backgroundWidth = document.getElementById('colour-background').width
+
+    topParam = yPostition - (phoneHeight / 3.4)
+    bottomParam = backgroundHeight - yPostition - (phoneHeight / 3.5)
+    leftParam = xPostition - (phoneWidth / 2.1)
+    rightParam = backgroundWidth - xPostition - (phoneWidth / 2.2)
+
+    console.log(backgroundHeight)
+
+    $("#colour-background").css('-webkit-clip-path', 'inset('+topParam+'px '+rightParam+'px '+bottomParam+'px '+leftParam+'px)');
+
+    // $("#colour-background").css('-webkit-clip-path', 'inset(24% 27% 11% 27%)');
+    // $(div).css('-webkit-clip-path', 'polygon(50% 0%, 0% 100%, 100% 100%)')
 });

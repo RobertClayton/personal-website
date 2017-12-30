@@ -7,3 +7,7 @@ body {
   position: absolute;
   transform: translate(-50%, -50%);
 }
+
+/* .colour-background {
+    clip-path: inset(24% 27% 11% 27%);
+} */
