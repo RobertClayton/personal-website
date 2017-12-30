@@ -1,6 +1,7 @@
 body {
   background-color: #a4c4f4;
 }
+
 .phone{
   max-height: 73%;
   max-width: 73%;
@@ -8,6 +9,8 @@ body {
   transform: translate(-50%, -50%);
 }
 
-/* .colour-background {
-    clip-path: inset(24% 27% 11% 27%);
-} */
+.imgContainer{
+  background-image: url("final grey.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}

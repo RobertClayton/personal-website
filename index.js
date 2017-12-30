@@ -1,24 +1,20 @@
 $(document).mousemove(function(mouse){
+  var xPostition = mouse.pageX
+  var yPostition = mouse.pageY
 
-    var xPostition = mouse.pageX
-    var yPostition = mouse.pageY
+  $("#phone").css({left:xPostition , top:yPostition});
 
-    $("#phone").css({left:xPostition , top:yPostition});
+  phoneWidth = document.getElementById('phone').width
+  phoneHeight = document.getElementById('phone').height
+  backgroundHeight = document.getElementById('colour-background').height
+  backgroundWidth = document.getElementById('colour-background').width
 
-    phoneWidth = document.getElementById('phone').width
-    phoneHeight = document.getElementById('phone').height
-    backgroundHeight = document.getElementById('colour-background').height
-    backgroundWidth = document.getElementById('colour-background').width
+  topParam = yPostition - (phoneHeight / 3.4)
+  bottomParam = backgroundHeight - yPostition - (phoneHeight / 3.5)
+  leftParam = xPostition - (phoneWidth / 2.1)
+  rightParam = backgroundWidth - xPostition - (phoneWidth / 2.2)
 
-    topParam = yPostition - (phoneHeight / 3.4)
-    bottomParam = backgroundHeight - yPostition - (phoneHeight / 3.5)
-    leftParam = xPostition - (phoneWidth / 2.1)
-    rightParam = backgroundWidth - xPostition - (phoneWidth / 2.2)
+  console.log(backgroundHeight)
 
-    console.log(backgroundHeight)
-
-    $("#colour-background").css('-webkit-clip-path', 'inset('+topParam+'px '+rightParam+'px '+bottomParam+'px '+leftParam+'px)');
-
-    // $("#colour-background").css('-webkit-clip-path', 'inset(24% 27% 11% 27%)');
-    // $(div).css('-webkit-clip-path', 'polygon(50% 0%, 0% 100%, 100% 100%)')
+  $("#colour-background").css('-webkit-clip-path', 'inset('+topParam+'px '+rightParam+'px '+bottomParam+'px '+leftParam+'px)');
 });
