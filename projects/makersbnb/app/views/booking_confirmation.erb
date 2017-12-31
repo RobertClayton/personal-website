@@ -1,0 +1,26 @@
+<head>
+  <link rel="stylesheet" type="text/css" href="/style/confirmbooking.css">
+  <link href='https://fonts.googleapis.com/css?family=Cabin' rel='stylesheet'>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+</head>
+
+
+<body>
+  <div class = "square"></div>
+
+<h2>Booking Confirmed!</h2>
+
+<div class = "start">
+  Starting date:  <%= @startDate %>
+</div>
+<br>
+<div class = "end">
+  End date:  <%= @endDate %>
+</div>
+<br>
+
+<form method='get' action='/welcome'>
+  <button type="submit" class = "Home">Home</button>
+</form>
+
+</body>

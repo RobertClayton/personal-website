@@ -1,0 +1,40 @@
+<!DOCTYPE hmtl>
+<head>
+  <link rel="stylesheet" type="text/css" href="style/landing.css">
+  <link href='https://fonts.googleapis.com/css?family=Cabin' rel='stylesheet'>
+</head>
+
+<body>
+
+  <div class="circle"></div>
+
+
+<h1> Welcome to<br></h1>
+<h2>  MakersBnB </h2>
+
+<div class="icon">
+  <img src="design_images/house.png" width="50" height="50">
+</div>
+
+<form action="/signup">
+  <button type="submit" class="signup">Sign Up</button>
+</form>
+
+
+<form action="/landing/login" method ="post">
+  <input type="email" class="email" name="email" placeholder="Email">
+  <input type="password" class="password"name="password" placeholder="Password">
+  <button type="submit" class="login">Login</button>
+</form>
+
+
+
+<div class="flasherror">
+  <% if flash[:error] %>
+  <div> <%= flash[:error] %> </div>
+  <% end %>
+</div>
+
+
+
+</body>

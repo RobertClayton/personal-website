@@ -1,0 +1,55 @@
+<head>
+  <meta charset="utf-8">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+  rel="stylesheet">
+  <link type="text/css" rel="stylesheet" src="restaurant_show_stylesheet.css">
+  <title><%= @restaurant.name %></title>
+</head>
+
+<body>
+  <div class="indent-left">
+    <p>
+
+      <%= image_tag(@restaurant.image_url(:thumb).to_s) %>
+    </p>
+    <p>
+      <strong>Restaurant Name:</strong>
+      <%= @restaurant.name %>
+    </p>
+
+    <p>
+      <strong>Location:</strong>
+      <%= @restaurant.location %>
+    </p>
+    <p>
+      <strong>Price range:</strong>
+      min: <%= @restaurant.min_price %> - max: <%= @restaurant.max_price %>
+    </p>
+    <p>
+      <strong>Description:</strong>
+      <%= @restaurant.description %>
+    </p>
+    <p>
+      <strong>Category:</strong>
+      <%= @restaurant.category %>
+    </p>
+
+    <% if !@user_left_review && !@user_is_owner%>
+    <%= render 'reviews/form' %>
+    <% end %>
+
+    <div class="indent-left">
+      <h2>Reviews</h2>
+      Average rating: <%= @ratings %>
+      <%= render @restaurant.reviews %>
+    </div>
+
+    <div class ='buttons_inline'>
+      <%= if user_signed_in? && current_user.id == @restaurant.user_id
+          button_to 'Edit Restaurant', edit_restaurant_path(@restaurant), method: :get
+          end
+          %>
+      <%= button_to 'Back', restaurants_path, method: :get %>
+    </div>
+  </div>
+</body>

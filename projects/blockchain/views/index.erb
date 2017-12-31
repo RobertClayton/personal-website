@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Blockpain</title>
+    <style>
+      .mine{
+        background-color: black;
+        color: white;
+      }
+      #chain{
+        padding-top: 29px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6">
+
+          <h1> welcome to blockpain</h1>
+
+
+          <h3>Mine:</h3>
+          <div class="well mine" >
+            <div id=wrap>
+              <div id=inside>
+                <!-- <% @chain.each do |block| %>
+                  <%= block.hashes %> <br>
+                <%end%> -->
+                <% @hashdisplay = "" %>
+                <% @last_block.hashes.each do |hash| %>
+                  <%= @hashdisplay = "#{hash}, #{@hashdisplay}"%>
+                <%end%>
+              </div>
+            </div>
+          </div>
+
+
+
+          <div class="well">
+
+          <h3>Pending transactions:</h3>
+            <% @blockchain.transactions.each do |transaction| %>
+              <%= transaction %>   <br>
+            <%end%>
+
+            </div>
+        </div>
+
+          <div id= "chain" class="col-sm-6">
+              <div class="well">
+            <h3> Chain: </h3>
+          <% @chain.each do |block| %>
+            Index: <br>
+            <%= block.index %>   <br>
+            Previous Hash: <br>
+            <%= block.previous_hash unless block.index == 1 %> <br>
+            Timestamp: <br>
+            <%= block.timestamps %>   <br>
+            Transaction: <br>
+            <%= block.transaction unless block.index == 1 %>   <br>
+            Nonce: <br>
+            <%= block.nonce %>   <br>
+            Hash: <br>
+            <%= block.hash %>  <br><br>
+
+          <%end%>
+          </div>
+
+          <script
+          src="https://code.jquery.com/jquery-3.2.1.min.js"
+          integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+          crossorigin="anonymous"></script>
+          <script>
+          $(document).ready(function(){
+              $("#inside").animate({ scrollTop: 2000000 }, 4000);
+          });
+
+          </script>
+          </div>
+        </div>
+
+    </div>
+  </body>
+</html>

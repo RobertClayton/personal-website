@@ -1,0 +1,25 @@
+<head>
+  <!-- <link rel="stylesheet" type="text/css" href="/style.css"> -->
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="style/add_property.css">
+  <link href='https://fonts.googleapis.com/css?family=Cabin' rel='stylesheet'>
+  <script src = "/src/jq.js"></script>
+</head>
+
+
+<body>
+
+<h2>Enter Rental</h2>
+
+<form id = "new-rental" action='/rental/new' method='POST' enctype="multipart/form-data" >
+  <input type='string' class='name' name='name' placeholder='Enter name:' />
+  <input type='string' class='location' name='location' placeholder='Enter location:' />
+  <input type='integer' class='price' name='price' placeholder='Enter price:' />
+  <input type='integer' class='capacity' name='capacity' placeholder='Enter capacity:' />
+  <input type='integer'class='user_name' name='user_name' placeholder='Enter User Name:' />
+  <input type='text' name='description' placeholder='Enter Description:' />
+  Your image <input type='file' name='picture' />
+  <input type='submit' value='submit'>
+</form>
+
+</body>
