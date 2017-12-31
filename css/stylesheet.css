@@ -1,0 +1,24 @@
+/* @import url('https://fonts.googleapis.com/css?family=Pacifico'); */
+
+body {
+  /* background-image: url("images/tree.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #d1738888; */
+  background: url("../images/geometric.jpg");
+  background-size: cover;
+  box-shadow:inset 0 0 0 2000px #d1738899;
+}
+
+.phone{
+  max-height: 73%;
+  max-width: 73%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+.imgContainer{
+  background-image: url("../images/final grey.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
