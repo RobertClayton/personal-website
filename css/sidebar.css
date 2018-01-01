@@ -44,6 +44,7 @@ b, b:hover, b:focus {
 }
 
 .sidebar {
+  font-family: 'Montserrat', sans-serif;
   background: #FFF;
   color: #000;
   transition: all 0.3s;
@@ -83,7 +84,7 @@ b, b:hover, b:focus {
     background-image: url('../images/github.svg');
     background-position: 50%;
     background-repeat: no-repeat;
-    background-size: 50px;
+    background-size: 40px;
 }
 
 .linkedin
@@ -91,5 +92,5 @@ b, b:hover, b:focus {
   background-image: url('../images/linkedin.png');
   background-position: 50%;
   background-repeat: no-repeat;
-  background-size: 50px;
+  background-size: 40px;
 }
