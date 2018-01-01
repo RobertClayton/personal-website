@@ -37,7 +37,7 @@
   }
 }
 
-b, b:hover, b:focus {
+.sidebar-components a, a:hover, a:focus {
   color: #000;
   text-decoration: none;
   transition: all 0.3s;
@@ -50,7 +50,7 @@ b, b:hover, b:focus {
   transition: all 0.3s;
 }
 
-.sidebar .sidebar-header {
+.sidebar-header {
   background: #FFF;
   color: #000;
   font-family: 'Bellefair', serif;
@@ -59,36 +59,38 @@ b, b:hover, b:focus {
   padding: 10px;
 }
 
-.sidebar .components {
+.sidebar-components {
   padding: 5px 0;
 }
 
-.sidebar ul li b {
+.sidebar-components li a {
   display: block;
   font-size: 1.1em;
   padding: 10px;
 }
 
-.sidebar ul li b:hover {
+.sidebar-components li a:hover {
   background: #EEE;
   color: #0AA;
 }
 
-.sidebar ul li a {
+.social-links {
+  padding: 5px 0;
+}
+
+.social-links li a {
   display: block;
   padding: 40px;
 }
 
-.github
-{
-    background-image: url('../images/github.svg');
-    background-position: 50%;
-    background-repeat: no-repeat;
-    background-size: 40px;
+.github {
+  background-image: url('../images/github.svg');
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: 40px;
 }
 
-.linkedin
-{
+.linkedin {
   background-image: url('../images/linkedin.png');
   background-position: 50%;
   background-repeat: no-repeat;

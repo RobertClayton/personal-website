@@ -1,0 +1,41 @@
+.cv-section h3{
+	font-family: 'Bellefair', serif;
+	font-weight: 400;
+	color: #fff;
+	font-size: 42px;
+	margin: 0 30px;
+	padding: 50px 0 0 150px;
+	line-height: 1.5;
+	text-align: left;
+}
+
+.cv-section p{
+	font-family: 'Montserrat', sans-serif;
+	color: #fff;
+	padding: 4px 170px;
+	margin: 0 30px;
+	font-size: 14px;
+	line-height: 2;
+	text-align: left;
+}
+.cv-section ul{
+	font-family: 'Montserrat', sans-serif;
+	color: #fff;
+	padding: 4px 200px;
+	margin: 0 30px;
+	font-size: 14px;
+	line-height: 2;
+	text-align: left;
+}
+
+@media (max-width: 768px) {
+  .cv-section h3{
+  	padding: 50px 0 0 0px;
+  }
+  .cv-section p{
+  	padding: 4px 20px;
+  }
+  .cv-section ul{
+  	padding: 4px 50px;
+  }
+}
