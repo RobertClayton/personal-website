@@ -1,4 +1,34 @@
+.projects-title {
+	font-family: 'Bellefair', serif;
+	font-weight: 400;
+	color: #fff;
+	font-size: 42px;
+	margin: 0 30px;
+	padding: 100px 0 0 0;
+	line-height: 1.5;
+	text-align: center;
+}
 
+.projects-text {
+	font-family: 'Montserrat', sans-serif;
+	color: #fff;
+	padding: 4px 150px;
+	margin: 0 30px;
+	font-size: 14px;
+	line-height: 2;
+	text-align: center;
+}
+
+.projects-github-links a {
+	color: #0dd;
+}
+
+@media (max-width: 768px) {
+	.projects-text {
+		padding: 4px 30px;
+		margin: 0 30px;
+	}
+}
 .projects-section {
 	max-width: 960px;
 	margin: 0 auto;
