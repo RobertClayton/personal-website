@@ -40,13 +40,13 @@
 }
 
 @media (max-width: 768px) {
-  .cv-section h3{
+  .contact-section h3{
   	padding: 50px 0 0 0px;
   }
-  .cv-section p{
+  .contact-section p{
   	padding: 4px 20px;
   }
-  .cv-section ul{
+  .contact-section ul{
   	padding: 4px 50px;
   }
 }
