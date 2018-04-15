@@ -1,3 +1,7 @@
+$(function(){
+    $("#article").load("article.html");
+});
+
 $(document).mousemove(function(mouse){
   var query = $('#sidebar');
   var isVisible = query.is(':visible');

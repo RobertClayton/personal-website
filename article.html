@@ -1,0 +1,145 @@
+<h1>Class Methods vs Instance Methods</h1>
+<p>
+    <a href="bear://x-callback-url/open-note?title=Things%20to%20learn&x-error=bear%3A%2F%2Fx%2Dcallback%2Durl%2Fcreate%3Ftitle%3DThings%2520to%2520learn">Things to learn</a>
+</p>
+
+<p>
+    <b>Sources</b>
+</p>
+<ol start="1">
+    <li>
+        <a href="http://www.rubyfleebie.com/understanding-class-methods-in-ruby/">Understanding class methods in ruby | Ruby Fleebie</a>
+    </li>
+</ol>
+<ol start="2">
+    <li>
+        <a href="http://www.railstips.org/blog/archives/2009/05/11/class-and-instance-methods-in-ruby/">Class and Instance Methods in Ruby // RailsTips by John Nunemaker</a>
+    </li>
+</ol>
+
+<p>
+    <b>Main</b>
+</p>
+<ol start="1">
+    <li>Class Method - resides at the class level
+    </li>
+</ol>
+<ol start="2">
+    <li>Instance Method - resides at the object level
+    </li>
+</ol>
+
+<ol start="3">
+    <li>Classes == Objects
+        <ul>
+            <li>	Class methods only exist in the object that defined them
+            </li>
+        </ul>
+    </li>
+</ol>
+
+<ol start="4">
+    <li>If you create a new instance of a class:
+        <ul>
+            <li>	Let create a new instance of a class called Test:
+                <p>
+                    <code class='code-inline'>x = Test.new</code>
+                </p>
+            </li>
+
+            <li>	x will contain each instance variable/method that have been defined in the class
+            </li>
+            <li>	x will also have a reference to the object Test
+                <ul>
+                    <li>		which will contain the variables that need to be shared among every instance of this class (class variables)
+                    </li>
+                    <li>		as well as methods that will be local to this object (class methods)
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+</ol>
+
+<ol start="5">
+    <li>Class Methods: - can be defined either of these ways:
+    </li>
+    <pre class="prettyprint">
+        <code class="language-ruby">
+            class Test
+	            def Test.class_method
+		            "I'm class"
+	            end
+
+    	        def self.class_method
+		            "I'm class"
+	            end
+            end
+        </code>
+    </pre>
+</ol>
+
+
+<ol start="6"><li>Instance Methods:
+</li></ol>
+<pre class="prettyprint"><code class='code-multiline'><span class="sf_code_syntax_keyword">class</span> <span class="sf_code_syntax_keyword">Test</span>
+	<span class="sf_code_syntax_keyword">def</span> <span class="sf_code_syntax_character">hello</span>
+		<span class="sf_code_syntax_string">"Hello! I'm an instance method"
+		"I'm accessible in every single instance of class Test"</span>
+	<span class="sf_code_syntax_keyword">end</span>
+<span class="sf_code_syntax_keyword">end</span>
+</code></pre>Add a new method to an instance of the class Test:
+<pre class="prettyprint"><code class='code-multiline'>x <span class="sf_code_syntax_keyword">=</span> <span class="sf_code_syntax_keyword">Test</span>.<span class="sf_code_syntax_keyword">new</span>
+
+<span class="sf_code_syntax_keyword">def</span> <span class="sf_code_syntax_character">x.goodbye</span>
+	<span class="sf_code_syntax_string">"Goodbye! I'm an instance method"</span>
+	<span class="sf_code_syntax_string">"I only exists in x"</span>
+<span class="sf_code_syntax_keyword">end</span></code></pre>
+<p><br></p>
+<ol start="7">
+    <li>How to use:
+    </li>
+</ol>
+<pre class="prettyprint">
+    <code class='code-multiline'>
+        <span class="sf_code_syntax_keyword">class</span>
+        <span class="sf_code_syntax_keyword">Foo</span>
+	    <span class="sf_code_syntax_keyword">def</span>
+        <span class="sf_code_syntax_character">self.bar</span>
+		puts <span class="sf_code_syntax_string">'class method'</span>
+	    <span class="sf_code_syntax_keyword">end</span>
+
+	    <span class="sf_code_syntax_keyword">def</span>
+        <span class="sf_code_syntax_character">baz</span>
+		puts <span class="sf_code_syntax_string">'instance method'</span>
+	    <span class="sf_code_syntax_keyword">end</span>
+        <span class="sf_code_syntax_keyword">end</span>
+    </code>
+</pre>
+
+On class:
+<p><code class='code-inline'>Foo.bar</code> # => "class method"
+</p>
+<p><code class='code-inline'>Foo.baz</code> # => NoMethodError: undefined method ‘baz’ for Foo:Class
+</p>
+On a class instance:
+<p><code class='code-inline'>Foo.new.baz</code> # => instance method
+</p>
+<p><code class='code-inline'>Foo.new.bar</code> # => NoMethodError: undefined method ‘bar’ for # <Foo:0x1e820>
+</p>
+
+<ol start="8">
+    <li>A great example of where using an instance method will come in useful is in a destroy method. You want a destroy to be local to only that instance and not destroy a class, but a specific instance:
+    </li></ol>
+<pre class="prettyprint"><code class='code-multiline'><span class="sf_code_syntax_keyword">class</span> <span class="sf_code_syntax_keyword">FoosController</span> <span class="sf_code_syntax_keyword">&lt;</span> <span class="sf_code_syntax_keyword">ActionController</span>
+	<span class="sf_code_syntax_keyword">def</span> <span class="sf_code_syntax_character">destroy</span>
+		foo <span class="sf_code_syntax_keyword">=</span> <span class="sf_code_syntax_keyword">Foo</span>.find(params[<span class="sf_code_syntax_number">:id</span>])
+    	foo.destroy
+    	redirect_to foos_url
+	<span class="sf_code_syntax_keyword">end</span>
+<span class="sf_code_syntax_keyword">end</span></code></pre>
+<p><br></p>
+
+
+
+<p><span class='hashtag'>#To learn/Ruby Methods#</span></p>
